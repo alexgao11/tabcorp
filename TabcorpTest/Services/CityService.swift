@@ -18,14 +18,14 @@ class CityService: BaseService, CityServiceProvider {
 }
 
 
-class MockCityServiceWithSuccessResponse: BaseService, CityServiceProvider {
+class MockCityServiceWithSuccessResponse: CityServiceProvider {
     func getCities(completion: @escaping (Result<CityAPIResponse, APIRequestError>) -> ()) {
         let result: Result<CityAPIResponse, APIRequestError> = .success(CityAPIResponse(cod: "1", cityList: [CityDetail(id: 1, name: "1")]))
         completion(result)
     }
 }
 
-class MockCityServiceWithFaliureResponse: BaseService, CityServiceProvider {
+class MockCityServiceWithFaliureResponse: CityServiceProvider {
     func getCities(completion: @escaping (Result<CityAPIResponse, APIRequestError>) -> ()) {
         let result: Result<CityAPIResponse, APIRequestError> = .failure(APIRequestError.unableToDecode)
         completion(result)

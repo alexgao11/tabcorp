@@ -22,3 +22,18 @@ class WeatherService: BaseService, WeatherServiceProvider {
         fetch(endpoint: "/\(Constants.weatherEndpoint)/\(cityId)", resultType: Weather.self, complitionHandler: completion)
     }
 }
+
+
+class MockWeatherServiceWithSuccessResponse: WeatherServiceProvider {
+    func getWeather(completion: @escaping (Result<Weather, APIRequestError>) -> ()) {
+        let result: Result<Weather, APIRequestError> = .success(Weather(id: 0, dt: 0, cityName: "", main: nil, wind: nil, rain: nil, clouds: nil, weather: nil, sys: nil))
+        completion(result)
+    }
+}
+
+class MockWeatherServiceWithFaliureResponse: WeatherServiceProvider {
+    func getWeather(completion: @escaping (Result<Weather, APIRequestError>) -> ()) {
+        let result: Result<Weather, APIRequestError> = .failure(APIRequestError.unableToDecode)
+        completion(result)
+    }
+}

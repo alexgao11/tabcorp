@@ -1,5 +1,5 @@
 //
-//  CityListViewModelTests.swift
+//  WeatherViewModelTests.swift
 //  TabcorpTestTests
 //
 //  Created by Alex Gao on 20/11/21.
@@ -9,7 +9,7 @@ import XCTest
 @testable import TabcorpTest
 import RxSwift
 
-class CityListViewModelTests: XCTestCase {
+class WeatherViewModelTests: XCTestCase {
     
     var bag: DisposeBag!
     
@@ -18,23 +18,23 @@ class CityListViewModelTests: XCTestCase {
     }
 
     func testSuccessResponse() {
-        let service = MockCityServiceWithSuccessResponse()
-        let viewModel = CitiesViewModel(service: service)
+        let service = MockWeatherServiceWithSuccessResponse()
+        let viewModel = WeatherViewModel(service: service)
         let expectation = self.expectation(description: #function)
-        let observer = viewModel.cities.subscribe{ event in
+        let observer = viewModel.weather.subscribe{ event in
             XCTAssertNotNil(event.element)
             expectation.fulfill()
         }
         observer.disposed(by: bag)
         
-        viewModel.getCities()
+        viewModel.getWeather()
         
         wait(for: [expectation], timeout: 0.5)
     }
     
     func testFailureResponse() {
-        let service = MockCityServiceWithFaliureResponse()
-        let viewModel = CitiesViewModel(service: service)
+        let service = MockWeatherServiceWithFaliureResponse()
+        let viewModel = WeatherViewModel(service: service)
         let expectation = self.expectation(description: #function)
         let observer = viewModel.error.subscribe{ event in
             XCTAssertNotNil(event.element)
@@ -43,7 +43,7 @@ class CityListViewModelTests: XCTestCase {
         }
         observer.disposed(by: bag)
         
-        viewModel.getCities()
+        viewModel.getWeather()
         
         wait(for: [expectation], timeout: 0.5)
     }
