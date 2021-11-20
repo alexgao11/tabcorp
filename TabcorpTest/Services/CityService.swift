@@ -13,7 +13,7 @@ protocol CityServiceProvider {
 
 class CityService: BaseService, CityServiceProvider {
     func getCities(completion: @escaping (Result<CityAPIResponse, APIRequestError>) -> ()) {
-        fetch(endpoint: "/weather/list", resultType: CityAPIResponse.self, complitionHandler: completion)
+        fetch(endpoint: "/\(Constants.weatherEndpoint)/list", resultType: CityAPIResponse.self, complitionHandler: completion)
     }
 }
 

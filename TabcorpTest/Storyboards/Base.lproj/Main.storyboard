@@ -32,14 +32,62 @@
                     </view>
                     <connections>
                         <outlet property="cityListTableView" destination="esE-nt-i4z" id="qPH-Fq-vXT"/>
+                        <segue destination="XPs-lj-ESA" kind="show" identifier="showWeather" id="Wg4-yy-PyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="117"/>
         </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="GA6-hC-F8v">
+            <objects>
+                <viewController id="XPs-lj-ESA" customClass="WeatherViewController" customModule="TabcorpTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRc-mO-W7V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmN-xB-K2w">
+                                <rect key="frame" x="20" y="40" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-lp-wgN">
+                                <rect key="frame" x="20" y="97" width="374" height="711"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EfL-s4-Fl2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LmN-xB-K2w" firstAttribute="leading" secondItem="EfL-s4-Fl2" secondAttribute="leading" constant="20" id="6bg-h0-6C1"/>
+                            <constraint firstItem="j2v-lp-wgN" firstAttribute="trailing" secondItem="LmN-xB-K2w" secondAttribute="trailing" id="BMe-NO-RMl"/>
+                            <constraint firstItem="EfL-s4-Fl2" firstAttribute="trailing" secondItem="LmN-xB-K2w" secondAttribute="trailing" constant="20" id="FSh-GJ-24a"/>
+                            <constraint firstItem="j2v-lp-wgN" firstAttribute="leading" secondItem="LmN-xB-K2w" secondAttribute="leading" id="RaZ-OJ-6GW"/>
+                            <constraint firstItem="EfL-s4-Fl2" firstAttribute="bottom" secondItem="j2v-lp-wgN" secondAttribute="bottom" id="h7y-c9-X9O"/>
+                            <constraint firstItem="LmN-xB-K2w" firstAttribute="top" secondItem="EfL-s4-Fl2" secondAttribute="top" constant="40" id="mFk-Ia-wm5"/>
+                            <constraint firstItem="j2v-lp-wgN" firstAttribute="top" secondItem="LmN-xB-K2w" secondAttribute="bottom" constant="36.5" id="mxR-CC-foA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zpl-1E-TKM"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="LmN-xB-K2w" id="iEw-zf-OsG"/>
+                        <outlet property="detailsTextView" destination="j2v-lp-wgN" id="C4P-gd-xm0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ff-ed-Kg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.768115942029" y="125.89285714285714"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

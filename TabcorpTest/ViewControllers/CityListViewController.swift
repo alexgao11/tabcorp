@@ -26,6 +26,18 @@ class CityListViewController: UIViewController {
         viewModel.getCities()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWeather" {
+            guard let detail = sender as? CityDetail, let destinationVC = segue.destination as? WeatherViewController else {
+                return
+            }
+            
+            let weatherService = WeatherService(cityId: "\(detail.id)")
+            let detailsViewModel = WeatherViewModel(service: weatherService)
+            destinationVC.viewModel = detailsViewModel
+        }
+    }
+    
     private func setupTableView() {
         cityListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cityCell")
         
@@ -33,7 +45,7 @@ class CityListViewController: UIViewController {
             .rx
             .modelSelected(CityDetail.self)
             .subscribe(onNext: { [weak self] detail in
-                print(detail)
+                self?.performSegue(withIdentifier: "showWeather", sender: detail)
             })
             .disposed(by: disposeBag)
     }

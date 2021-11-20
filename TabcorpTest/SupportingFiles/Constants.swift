@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let baseURL = "https://testapi.io/api/olestang"
+    static let weatherEndpoint = "weather"
 }
