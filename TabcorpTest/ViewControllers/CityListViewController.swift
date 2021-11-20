@@ -14,13 +14,11 @@ class CityListViewController: UIViewController {
     @IBOutlet weak var cityListTableView: UITableView!
     
     let disposeBag = DisposeBag()
-    let service = CityService()
     var viewModel: CitiesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel = CitiesViewModel(service: service)
         setupBindings()
         setupTableView()
         viewModel.getCities()
