@@ -14,7 +14,7 @@ enum APIRequestError: Error {
 }
 
 class BaseService {
-    func fetch<T>(endpoint: String, resultType: T.Type, complitionHandler: @escaping (Result<T, Error>) -> ()) where T: Decodable {
+    func fetch<T>(endpoint: String, resultType: T.Type, complitionHandler: @escaping (Result<T, APIRequestError>) -> ()) where T: Decodable {
         guard let url = URL(string: Constants.baseURL + endpoint) else {
             complitionHandler(.failure(APIRequestError.invalidURL))
             return

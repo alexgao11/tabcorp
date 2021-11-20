@@ -40,10 +40,10 @@ class CityListViewController: UIViewController {
     
     private func setupBindings() {
         viewModel
-            .errorMessage
+            .error
             .observe(on: MainScheduler.instance)
-            .subscribe { errorMessage in
-                print(errorMessage)
+            .subscribe { error in
+                print(error.element ?? "")
             }
             .disposed(by: disposeBag)
         

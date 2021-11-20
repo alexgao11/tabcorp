@@ -11,7 +11,7 @@ import RxSwift
 class CitiesViewModel {
     let service: CityServiceProvider
     var cities: PublishSubject<[CityDetail]> = PublishSubject()
-    let errorMessage: PublishSubject<String> = PublishSubject()
+    let error: PublishSubject<APIRequestError> = PublishSubject()
     
     init(service: CityServiceProvider) {
         self.service = service
@@ -23,7 +23,7 @@ class CitiesViewModel {
             case .success(let response):
                 self.cities.onNext(response.cityList)
             case .failure(let error):
-                self.errorMessage.onNext(error.localizedDescription)
+                self.error.onNext(error)
             }
         }
         

@@ -16,7 +16,6 @@
 		FA1A2A91274743BE00026C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1A2A8F274743BE00026C82 /* Main.storyboard */; };
 		FA1A2A93274743BF00026C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1A2A92274743BF00026C82 /* Assets.xcassets */; };
 		FA1A2A96274743BF00026C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1A2A94274743BF00026C82 /* LaunchScreen.storyboard */; };
-		FA1A2AA1274743BF00026C82 /* TabcorpTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2AA0274743BF00026C82 /* TabcorpTestTests.swift */; };
 		FA1A2AAB274743BF00026C82 /* TabcorpTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2AAA274743BF00026C82 /* TabcorpTestUITests.swift */; };
 		FA1A2AAD274743BF00026C82 /* TabcorpTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A2AAC274743BF00026C82 /* TabcorpTestUITestsLaunchTests.swift */; };
 		FA3A4CA0274745EB00F17592 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4C9F274745EB00F17592 /* City.swift */; };
@@ -24,6 +23,7 @@
 		FA3A4CA52747462900F17592 /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4CA42747462900F17592 /* CityService.swift */; };
 		FA3A4CA72747466600F17592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4CA62747466600F17592 /* Constants.swift */; };
 		FA3A4CAA274746DA00F17592 /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4CA9274746DA00F17592 /* CityListViewModel.swift */; };
+		FA99AD882748C47300D6FAA3 /* CityListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99AD872748C47300D6FAA3 /* CityListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		FA1A2A95274743BF00026C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1A2A97274743BF00026C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA1A2A9C274743BF00026C82 /* TabcorpTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabcorpTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA1A2AA0274743BF00026C82 /* TabcorpTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabcorpTestTests.swift; sourceTree = "<group>"; };
 		FA1A2AA6274743BF00026C82 /* TabcorpTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabcorpTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1A2AAA274743BF00026C82 /* TabcorpTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabcorpTestUITests.swift; sourceTree = "<group>"; };
 		FA1A2AAC274743BF00026C82 /* TabcorpTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabcorpTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		FA3A4CA42747462900F17592 /* CityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityService.swift; sourceTree = "<group>"; };
 		FA3A4CA62747466600F17592 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA3A4CA9274746DA00F17592 /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
+		FA99AD872748C47300D6FAA3 /* CityListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 		FA1A2A9F274743BF00026C82 /* TabcorpTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA1A2AA0274743BF00026C82 /* TabcorpTestTests.swift */,
+				FA99AD872748C47300D6FAA3 /* CityListViewModelTests.swift */,
 			);
 			path = TabcorpTestTests;
 			sourceTree = "<group>";
@@ -484,7 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1A2AA1274743BF00026C82 /* TabcorpTestTests.swift in Sources */,
+				FA99AD882748C47300D6FAA3 /* CityListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
